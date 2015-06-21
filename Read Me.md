@@ -5,6 +5,30 @@ date: "Saturday, June 20, 2015"
 output: html_document
 ---
 
+In any analysis we need to get the data, here we access the url to download the data in a newly created folder
+```{r}
+#Download the file from the url and saving it on the computer
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+if (!file.exists("Samsung_data")) {
+    dir.create("Samsung_data")
+}
+setInternet2(TRUE)
+download.file(fileUrl, destfile = ("~./Samsung_data/Samsung_dataset.zip"))
+
+```
+To allow the evaluation of my scripts, I've tried using dirname that seem to eliminate the first part of the path.
+```{r}
+#Setting up a working directory by using dirname that eliminate any trailing file separators
+dirname(file.path("Samsung_data"))
+#Creating the working directory
+setwd( "./Samsung_data")
+\#Unzipping the file
+unzip("Samsung_dataset.zip")
+
+```
+
+
+
 
 To obtain this data set we needed to perform certain transformation.
 
