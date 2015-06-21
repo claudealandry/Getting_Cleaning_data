@@ -96,15 +96,3 @@ by.ID <- group_by(mydata.combo2, Subject_ID, Activities) #Group them by Subject 
 avg <- summarise_each(by.ID, funs(mean)) #Calculate the mean for each variable by Subject, then by activity
 
 ```
-
-```{r}
-summary(cars)
-```
-
-You can also embed plots, for example:
-
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
